@@ -2,17 +2,19 @@
 
 # Read in the female baby names data file found in the `data` folder into a 
 # variable called `names`. Remember to NOT treat the strings as factors!
-
+names <- read.csv("data/female_names.csv", stringsAsFactors=FALSE)
 
 # Create a data frame `names_2013` that contains only the rows for the year 2013
-
+names_2013 <- names[names$year == 2013, ]
 
 # What was the most popular female name in 2013?
-
+names_2013$name[names_2013$prop == max(names_2013$prop)]
 
 # Write a function `most_popular_in_year` that takes in a year as a value and 
 # returns the most popular name in that year
-
+most_popular_in_year <- function(year) {
+  
+}
 
 # What was the most popular female name in 1994?
 

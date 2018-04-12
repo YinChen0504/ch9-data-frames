@@ -36,4 +36,4 @@ grants$organization[grants$total_amount == max(grants$total_amount)]
 grants$organization[grants$total_amount == min(grants$total_amount)]
 
 # How many grants were awarded in 2010?
-nrow(grants[grants$start_year == "2010", ])
+sum(grants$total_amount[grants$start_year == 2010])

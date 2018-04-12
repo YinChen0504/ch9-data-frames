@@ -3,20 +3,21 @@
 # Create a vector of 100 employees ("Employee 1", "Employee 2", ... "Employee 100")
 # Hint: use the `paste()` function and vector recycling to add a number to the word
 # "Employee"
-employees <- c(paste("employee", 1:100))
+employees <- paste("employee", 1:100)
 
 # Create a vector of 100 random salaries for the year 2017
 # Use the `runif()` function to pick random numbers between 40000 and 50000
-old_salaries <- c(runif(employees, min = 40000, max = 50000))
+old_salaries <- runif(100, 40000, 50000)
 
 # Create a vector of 100 salaries in 2018 that have changed from 2017
 # Use `runif()` to add a random number between -5000 and 10000 to each of 2017's
 # salaries (the negative number means that a salary may have decreased!)
-new_salaries <- c(old_salaries + runif(old_salaries, min = -5000, max = 10000))
+new_salaries <- old_salaries + runif(old_salaries, -5000, 10000)
 
 # Create a data frame 'salaries' by combining the 3 vectors you just made
 # Remember to set `stringsAsFactors=FALSE`!
-salaries <- data.frame(employees, old_salaries, new_salaries, stringsAsFactors=FALSE)
+salaries <- data.frame(employees, old_salaries, new_salaries,
+                       stringsAsFactors=FALSE)
 
 # Create a column 'change' that stores each person's change in salary between
 # 2017 and 2018
